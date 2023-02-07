@@ -1,0 +1,592 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+}
+
+/* agrega un fondo para la pagina, lo oscurece y controla su tamaño */
+body {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../resources/images/fondo.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+/* cambia el fondo de la sección login */
+.bodyLogin {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../resources/images/fondoPacman.gif);
+}
+/* cambia el fondo cuando se es admin */
+.bodyAdmin {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../resources/images/fondoAdmin.gif);
+}
+
+.fondoFormLogin {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5% auto;
+    min-width: 25%;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+}
+
+
+
+/* diseño de la barra de navegación. con flex-wrap se fuerza a mantener a los hijos dentro */
+.container-navbar {
+    height: 12%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+.container-navbar .container-navbar-mobile h1 {
+    font-style: italic;
+}
+
+/* este logo solo se usa en el modo normal*/
+.logo-laptop {
+    width: 50px;
+    margin-right: 15px;
+}
+
+/* este logo solo se usa en el modo responsive */
+.logo-mobile {
+    display: none;
+}
+
+/* diseño interno de la barra de navegación */
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline;
+    list-style: none;
+    margin-right: 30px;
+}
+
+/* diseño de los links dentro de nav */
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+    padding: 2px;
+}
+
+/* clase para cuando se coloque el mouse sobre un link */
+nav ul li a:hover {
+    border-bottom: 4px solid red;
+    border-radius: 5px;
+}
+
+/* columna que controla principalment eque los elementos sean flexibles, usado para tablas, etc */
+.container-card-game {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+/* clase para definir el texto inicial de la pagina de inicio */
+.intro-page {
+    max-width: 600px;
+    margin-top: 6%;
+    margin-left: 8%;
+}
+
+
+
+/* para matener los links de la pagina/botón en blanco */
+a {
+    color: white;
+}
+
+/* h1 del titulo de la pagina del inicio */
+h1.intro-page-title {
+    color: #fff;
+    font-size: 3rem;
+    line-height: 70px;
+    letter-spacing: 1px;
+    margin: 15px 0;
+    text-align: start;
+}
+
+/* define como serán los proximos h1 */
+h1 {
+    color: #fff;
+    font-size: 50px;
+    letter-spacing: 1px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+/* definimos como serán los "subtitulos" de la pagina */
+h2 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+
+h3 {
+    color: #fff;
+}
+/* parrafo contenido debajo del titulo de la pagina del inicio */
+p.intro-page-paragraph {
+    color: #fff;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0px 0px;
+}
+
+/* define como serán los siguientes parrafos de la pagina */
+p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: justify;
+    margin: 0px 60px;
+}
+
+/* Medidas y posición de la imagen inicial */
+.card-game {
+    position: relative;
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    margin: 20px 15px;
+}
+
+/* cuanto demora la animación */
+.card-game:hover {
+    transform: translateY(-10px);
+    transition: all .4s ease-in-out;
+}
+
+/* diseño de la imagen */
+.image-static {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* diseño de los h4, principalmente usados en paginas anexas a la principal */
+h4 {
+    font-size: 15px;
+    color: white;
+    margin-bottom: 5px;
+}
+h5 {
+    color: #fff;
+}
+
+/* diseño del footer */
+.footer {
+    width: 100%;
+    background: rgba(44, 40, 40, 0.15);
+    backdrop-filter: blur(15px);
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    padding: 0px 150px;
+    bottom: 0;
+    z-index: 3;
+}
+
+/*posicion left del footer */
+#footer-left {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: white;
+    float: left;
+}
+
+/* posición de los logos/iconos de las redes sociales dentro del footer */
+#footer-right {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: white;
+    float: right;
+}
+
+/* Pagina login */
+.containerForm-login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* diseño de card login */
+.card-login {
+    margin: 3rem auto;
+}
+/* diseño container */
+.containerForm-vendedor {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0px;
+    backdrop-filter: blur(6px);
+    padding: 0px 0px;
+    z-index: 2;
+}
+/* mensaje que aparece cuando se hace un registro */
+.containerForm-message {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+/* container en donde se dispone el formulario de ventas */
+.grid-content-nuevo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin: 40px 0px;
+    padding: 0px 0px;
+    z-index: 2;
+}
+.grid-content-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+/* centra los items del grid-content */
+.grid-items {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+/* diseño inputs */
+.input-form-vendedor {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.input-login {
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+/* diseño de botones */
+.btn-go-login {
+    width: 180px;
+    padding: 12px 0;
+    border: none;
+    color: #fff;
+    background-color: red;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+.btn-go-login:hover {
+    box-shadow: inset 180px 0 0 0 blue;
+    transition: all .4s ease-in-out;
+}
+.btn-form-login {
+    display: flex;
+    background-color: rgb(238, 2, 2);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 10px;
+    text-align: center;
+    justify-content: space-around;
+    color: #fff;
+    font-weight: bold;
+}
+.btn-form-vendedor {
+    background-color: rgb(238, 2, 2);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+}
+.btn-form-vendedor:hover {
+    background-color: rgb(42, 42, 243);
+    box-shadow: 0px 0px 10px #000;
+}
+.btn-form-vendedor--last {
+    margin-top: 20px;
+}
+.title-login {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.container-navbar-mobile {
+    text-align: center;
+}
+
+.container-navbar-mobile h1 {
+    color: rgb(255, 255, 255);
+}
+/* para alinear los label de los formularios */
+.form-label-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 70%;
+    margin: 10px auto;
+}
+
+.text-login {
+    font-size: 15px;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+}
+/* mensaje de alerta */
+.alert-danger {
+    color: red;
+    font-weight: bold;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+tr,
+td {
+    border: 1px solid #fff;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+td:hover {
+    background-color: rgb(80, 11, 107);
+}
+
+.title-section-games {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.grid-item-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 10px 0px;
+    margin-bottom: 30px;
+}
+/* define los colores que tendrán algunas celdas */
+.table-cell {
+    background-color: rgb(3, 3, 37);
+    font-weight: bold;
+    text-align: center;
+}
+.table-cell-ventas {
+    background-color: rgb(4, 5, 83);
+    font-weight: bold;
+    text-align: center;
+}
+.table-cell-comisiones {
+    background-color: rgb(7, 70, 112);
+    font-weight: bold;
+    text-align: center;
+}
+
+.table-cell-ganancias {
+    background-color: rgb(39, 13, 110);
+    font-weight: bold;
+    text-align: center;
+}
+.table-cell-space {
+    width: 50px;
+}
+
+.material-icons {
+    font-size: 20px;
+    color: #fff;
+}
+
+.grid-item-game {
+    /* margen entre items */
+    margin: 0px 10px;
+}
+
+.image-game {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.image-game:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    transition: all .4s ease-in-out;
+}
+
+.table-consulta-vendedor {
+    text-align: center;
+    width: 70%;
+    height: 180px;
+    margin: 0px 10px;
+    border-collapse: collapse;
+    display: inline-table;
+    border: 2px;
+    border-color: #fff;
+    /* bordes de la tabla activos */
+    border-radius: 10px;
+}
+
+/* Sección encargada del diseño responsive */
+@media screen and (max-width: 768px) {
+    /* Ajusta la imagen del background para un mejor diseño */
+    body {
+        background-size: 130% 100%;
+        background-position: -50px;
+    }
+    /* centra la barra de navegación (el logo dentro de nav)*/
+    nav {
+        text-align: center;
+    }
+    /* diseña la barra de navegación */
+    .container-navbar {
+        display: inline;
+        list-style: none;
+        text-align: center;
+    }
+    .navbar-links {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .navbar-links ul li a {
+        padding: 0px 1px;
+        margin: 0px;
+        text-align: center;
+    }
+    /* diseña el texto dentro de la barra de navegación */
+    #title-navbar-mobile {
+        display: inline-block;
+        text-align: center;
+        font-style: italic;
+    }
+    /* oculta de la pantalla el logo no responsive */
+    .logo-laptop {
+        display: none;
+    }
+    /* muestra el logo con diseño responsive */
+    .logo-mobile {
+        text-align: center;
+        display: inline-block;
+        width: 30px;
+    }
+    .form-label-group {
+        width: 100%;
+    }
+    .grid-item-body {
+        display: grid;
+        gap: 2rem;
+        grid-auto-rows: 8rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+    }
+    .containerForm-vendedor {
+        height: auto;
+    }
+    .grid-content-nuevo {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+    }
+    /* diseño de tabla responsive */
+    .table-consulta-vendedor {
+        display: inline-table;
+        text-align: center;
+        margin: 10px;
+        font-size: 12px;
+    }
+    /* para generar espacio al interior de la tabla */
+    .material-icons {
+        font-size: 12px;
+        color: #fff;
+    }
+    /* ajusta el titulo principal de la pagina de inicio */
+    h1.intro-page-title {
+        font-size: 2.4rem;
+        text-align: center;
+        color: rgb(255, 255, 255);
+    }
+    /* redefine los titulos h1 */
+    h1 {
+        font-size: 30px;
+    }
+    /* redefine los parrafos p */
+    p {
+        font-size: 15px;
+    }
+    /* redefine los margenes del contenedor de la pagina inicial */
+    .intro-page {
+        margin: 10px;
+    }
+    /* redefine el parrafo principal */
+    .intro-page-paragraph {
+        padding: 0px 20px;
+        text-align: center;
+    }
+    /* redefine el diseño del botón de la pagina inicial */
+    .btn-go-login {
+        width: 45%;
+        margin-left: 18px;
+    }
+    /* redefine el tamaño de las imagenes de las "card" */
+    .card-game {
+        width: 100px;
+        height: 120px;
+        display: inline-block;
+    }
+    /* ajusta el tamaño del titulo */
+    #title-card-game {
+        width: 100px;
+    }
+    /* redefine el diseño del footer/pie de pagina */
+    .footer {
+        position: fixed;
+        width: 100%;
+        color: white;
+        text-align: center;
+        left: 0;
+        bottom: 0;
+        padding: 0px 10px;
+        margin-top: 10px;
+        z-index: 3;
+    }
+    /* redefine el diseño del lado derecho los logos/iconos para ajustarlos y colocarlos de mejor manera al pie de pagina */
+    #footer-right {
+        display: inline;
+        margin-top: 30px;
+        font-size: 10px;
+        color: white;
+        float: right;
+    }
+    /* redefine el diseño del lado izquierdo los logos/iconos para ajustarlos y colocarlos de mejor manera al pie de pagina */
+    #footer-left {
+        margin-top: 30px;
+        font-size: 10px;
+        font-style: italic;
+        color: white;
+        float: left;
+    }
+}
